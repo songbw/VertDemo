@@ -25,5 +25,16 @@
     <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-async:3.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:bson:3.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.2.0" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-mysql-postgresql-client:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-sql-common:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.11.4" level="project" />
+    <orderEntry type="library" name="Maven: com.github.mauricio:postgresql-async_2.11:0.2.18" level="project" />
+    <orderEntry type="library" name="Maven: com.github.mauricio:db-async-common_2.11:0.2.18" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.joda:joda-convert:1.5" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-all:4.0.29.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.javassist:javassist:3.20.0-GA" level="project" />
+    <orderEntry type="library" name="Maven: com.github.mauricio:mysql-async_2.11:0.2.18" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.21" level="project" />
   </component>
 </module>
