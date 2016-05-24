@@ -12,6 +12,8 @@ import io.vertx.ext.mongo.MongoClient;
 import io.vertx.ext.sql.ResultSet;
 import io.vertx.ext.sql.SQLConnection;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -37,7 +39,6 @@ public class AuthSNServer {
         Vertx.vertx().createHttpServer().requestHandler(req -> {
 
             if ("GET".equals(req.method().name()) && "/tree".equals(req.uri())) {
-                future1.complete(req);
                 JsonArray json = new JsonArray();
                 mongo.find("BZJTree", new JsonObject(), fut1.completer());
                 for (JsonObject o : fut1.result()) {
@@ -84,13 +85,20 @@ public class AuthSNServer {
                     json.add(jsonObject);
                     req.response().end(json.encode());
                 } else {
-                    ResultSet resultSet = (ResultSet) future1.result();
-                    resultSet.getResults().forEach(json::add);
-
+                    ResultSet resultSet  = (ResultSet) future1.result();
+                    Iterator<JsonArray> iterator = resultSet.getResults().iterator() ;
+                    JsonObject jsonObject = new JsonObject() ;
+                    while (iterator.hasNext()) {
+                        List list = iterator.next().getList() ;
+                        for (int i =0;i <14;i++){
+                            jsonObject.put(resultSet.getColumnNames().get(i),list.get(i)) ;
+                        }
+                        json.add(jsonObject) ;
+                    }
                     req.response().putHeader(HttpHeaders.CONTENT_TYPE, "application/json;charset=utf-8");
                     req.response().end(json.encode());
                 }
             }
-        }).listen(8080);
+        }).listen(6080);
     }
 }
